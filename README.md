@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+# What-to-Cook 🍽️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+**What-to-Cook** is a recipe search application designed to solve the everyday challenge of meal planning and cooking inspiration. By integrating with the Edamam Recipe API, it offers personalized recipe recommendations based on meal types, cuisine preferences, and dietary restrictions. Whether you're a busy professional looking for quick dinner ideas or a health-conscious individual seeking nutritious recipes, What-to-Cook streamlines your cooking journey with an intuitive and responsive interface.
 
-## Available Scripts
+This app addresses the common frustration of finding suitable recipes by providing a comprehensive filtering system that considers various dietary needs, cuisine preferences, and meal types, making meal planning both efficient and enjoyable.
 
-In the project directory, you can run:
+## Table of Contents
+- [Key Features](#key-features)
+- [Technical Implementation](#technical-implementation)
+- [Setup and Installation](#setup-and-installation)
+- [Usage Guide](#usage-guide)
+- [API Integration](#api-integration)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Key Features
+- **Recipe Search** 🔍
+  - Filter by meal type (breakfast, lunch, dinner, snacks)
+  - Search across global cuisines
+  - Apply dietary restrictions and preferences
+  
+- **Recipe Details** 📋
+  - Comprehensive ingredient lists
+  - Step-by-step instructions
+  - Nutritional information
+  - Cooking time estimates
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technical Implementation
+- Built with React.js for dynamic UI updates
+- State management using React Context
+- Responsive design with CSS Grid and Flexbox
+- API integration with Edamam Recipe Search
+- Local storage for saving user preferences
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup and Installation
 
-### `npm test`
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn package manager
+- Edamam API credentials
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation Steps
 
-### `npm run build`
+1. **Clone the Repository**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+git clone https://github.com/yourusername/what-to-cook.git
+cd what-to-cook
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install Dependencies**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm install
 
-### `npm run eject`
+3. **ADD API Information in app.js**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+const APP_ID = "Add the Edamam APP ID";
+const APP_KEY = "Add the Edamam APP Key";
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Start Development Server**
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+*Your application will be available at http://localhost:3000*
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage Guide
+### Basic Usage
 
-## Learn More
+### Initial Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Launch the application
+Set your dietary preferences (optional)
+Choose preferred cuisines (optional)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Finding Recipes
 
-### Code Splitting
+Select meal type from the dropdown
+Enter any specific ingredients (optional)
+Apply dietary filters as needed
+Click "Search Recipes"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Recipe Interaction
 
-### Analyzing the Bundle Size
+Click on recipes get redirected to the website and webpage that has the recipe
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Advanced Features
 
-### Making a Progressive Web App
+Custom Search Combinations
+Combine multiple filters
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## API Integration
 
-### Advanced Configuration
+### Edamam Recipe Search API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Base Endpoint: https://api.edamam.com/api/recipes/v2
+Authentication: API Key required, in the form of app id and key
 
-### Deployment
+### Key Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Recipe Search
 
-### `npm run build` fails to minify
+    Method: GET
+    Parameters:
+        q: Search query
+        diet: Dietary restrictions
+        health: Health filters
+        cuisineType: Cuisine preference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Nutrition Analysis
+
+    Method: GET
+    Parameters:
+
+        ingredients: List of ingredients
+        nutrition-type: Analysis type
+
+Response Format
+    jsonCopy{
+    "hits": [
+        {
+        "recipe": {
+            "label": "Recipe Name",
+            "ingredients": [],
+            "nutritionalInfo": {},
+            "instructions": []
+        }
+        }
+    ]
+    }
+
+## Contributing
+We welcome contributions! Please follow these steps:
+
+    Fork the repository
+    Create a feature branch
+    Commit your changes
+    Push to the branch
+    Open a Pull Request
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+## Credits
+LLMs ChatGPT and Clade were used to implement the functions for searching multiple categories. LLMs also helped with the structuring the tiles of the recipes and in implementing interactve tiles.  
