@@ -44,7 +44,7 @@ This app addresses the common frustration of finding suitable recipes by providi
 
 1. **Clone the Repository**
 
-git clone https://github.com/yourusername/what-to-cook.git
+git clone https://github.com/komalnpn/what-to-cook.git
 cd what-to-cook
 
 2. **Install Dependencies**
@@ -52,11 +52,13 @@ cd what-to-cook
 npm install
 
 3. **ADD API Information in app.js**
-
+ ...
 const APP_ID = "Add the Edamam APP ID";
 const APP_KEY = "Add the Edamam APP Key";
+...
 
 4. **Start Development Server**
+
 npm start
 
 *Your application will be available at http://localhost:3000*
