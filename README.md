@@ -115,17 +115,26 @@ Nutrition Analysis
         nutrition-type: Analysis type
 
 Response Format
+
     jsonCopy{
+
     "hits": [
+
         {
+
         "recipe": {
+
             "label": "Recipe Name",
             "ingredients": [],
             "nutritionalInfo": {},
             "instructions": []
+
         }
+
         }
+
     ]
+    
     }
 
 ## Contributing
